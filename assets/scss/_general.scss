@@ -1,0 +1,118 @@
+// General Style
+
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.navbar {
+  z-index: 999 !important;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.img-container {
+  max-width: 100%;
+  position: relative;
+}
+
+.custom-btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  background-color: #eeeeee;
+  letter-spacing: 2px;
+  font-size: 16px;
+  transition: 0.5s;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: black !important;
+    text-decoration: none;
+    transform: scale(1.1);
+
+    & span:nth-child(1) {
+      transform: scaleY(1);
+      transform-origin: bottom;
+      transition: transform 0.5s;
+    }
+
+    & span:nth-child(2) {
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.5s;
+    }
+
+    & span:nth-child(3) {
+      transform: scaleY(1);
+      transform-origin: bottom;
+      transition: transform 0.5s;
+      transition-delay: 0.5s;
+    }
+
+    & span:nth-child(4) {
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.5s;
+      transition-delay: 0.5s;
+    }
+  }
+
+  & span {
+    display: block;
+    position: absolute;
+    background-color: var(--mint);
+
+    &:nth-child(1) {
+      left: 0;
+      bottom: 0;
+      width: 2px;
+      height: 100%;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.5s;
+    }
+
+    &:nth-child(2) {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s;
+    }
+
+    &:nth-child(3) {
+      right: 0;
+      bottom: 0;
+      width: 2px;
+      height: 100%;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.5s;
+      transition-delay: 0.5s;
+    }
+
+    &:nth-child(4) {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s;
+      transition-delay: 0.5s;
+    }
+  }
+}

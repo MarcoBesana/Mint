@@ -1,0 +1,376 @@
+//homepage style
+
+//first section
+
+
+//illustration animation
+
+.man {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  z-index: 111;
+  animation: fadein 5s linear normal forwards, up-down 3s linear infinite;
+}
+
+.animation-illustration {
+  position: absolute;
+  left: 60%;
+  top: 30%;
+  z-index: 1;
+}
+
+.illustration-container {
+  text-align: right;
+}
+
+.bg-illustration {
+  max-width: 100%;
+}
+
+.balloon {
+  animation: fadein 5s 0.5s linear normal forwards, orbit 5s  linear infinite;
+}
+
+.light {
+  opacity: 0;
+  animation: fadein 5s 1.5s linear normal forwards, orbit 5s 1.5s linear infinite;
+}
+
+.planet {
+  opacity: 0;
+  animation: fadein 5s 4s linear normal forwards, orbit 5s 4s linear infinite;
+}
+
+.pencil {
+  opacity: 0;
+  animation: fadein 5s 2.5s linear normal forwards, orbit 5s 2.5s linear infinite;
+}
+
+@keyframes orbit {
+	from { 	transform: rotate(0deg) translateX(150px) rotate(0deg); }
+	to   {  transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes fadein{
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes up-down{
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+  transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cursor {
+    display: none;
+  }
+
+  .illustration-container {
+    text-align: center;
+  }
+
+  .man {
+    max-width: 50%;
+    left: 25%;
+    top: 20%
+  }
+
+  .balloon {
+    max-width: 15%;
+  }
+
+  .animation-illustration {
+    max-width: 20%;
+    top: 35%;
+    left: 40%;
+  }
+
+  @keyframes orbit {
+    from { 	transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   {  transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-text {
+    margin-bottom: 3rem;
+  }
+}
+
+//Casestudy section
+
+.grid-container {
+  display: grid;
+  grid-gap: 20px;
+	grid-template-areas:
+    "one two three"
+    "four two five"
+    "four six five";
+  
+  @media screen and (max-width: 575px) {
+    grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six";
+
+    .two {
+      min-height: 300px !important;
+    }
+  }
+
+  @media screen and (min-width: 576px) and (max-width: 991px) {
+    grid-template-areas:
+    "one two"
+    "four two"
+    "four six"
+    "three five";
+  }
+}
+
+.box{
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+
+  &:hover span{
+    width: 1000px;
+    height: 1000px;
+  }
+
+  & span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0.95;
+    background-color: var(--mint);
+    z-index: 1;
+    transition: width 0.5s, height 0.5s;
+  }
+
+  & .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    & div {
+      padding: 40px;
+      color: white;
+      transition: 0.2s;
+      visibility: hidden;
+      opacity: 0;
+      transform: translate(50px);
+    }
+  }
+}
+
+.box:hover .content div {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.one {
+  background: url('/assets/img/photography-ideas-creative-occupation-design-studio-concept.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	color: #fff;
+  grid-area: one;
+}
+
+.two {
+	background: url('/assets/img/inspiration-ideas-design-creative-thinking-word.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	color: #000;
+  grid-area: two;
+  min-height: 450px;
+}
+
+.three {
+	background: url('/assets/img/multiple-lightbulb-designs.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	color: #000;
+	grid-area: three;
+}
+
+.four {
+	background: url('/assets/img/53.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	color: #fff;
+	grid-area: four;
+}
+
+.five {
+	background: url('/assets/img/laptop-in-a-coworking-space.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	color: #fff;
+	grid-area: five;
+}
+
+.six {
+	background: url('/assets/img/creative-postcard-set-blue-wall.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	color: #fff;
+	grid-area: six;
+}
+
+
+//about us
+
+.card-container {
+  position: relative;
+  min-height: 400px;
+
+  &.woman {
+    background: url('/assets/img/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.man-about {
+    background: url('/assets/img/mand-holding-cup.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.about-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(0, 0, 0, 0.2);
+    background-image: none;
+  }
+
+  &:hover .info {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  background-color: var(--mint);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.5s, height 0.5s;
+  opacity: 0.95;
+  height: 70px;
+}
+
+//blog section
+
+.post-photo {
+  position: relative;
+  overflow: hidden;
+
+  &:hover span{
+    width: 1000px;
+    height: 1000px;
+  }
+
+  &:hover .content div {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  & span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0.95;
+    background-color: var(--mint);
+    z-index: 1;
+    transition: width 0.7s, height 0.7s;
+  }
+
+  & .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    & div {
+      padding: 40px;
+      color: white;
+      transition: 0.2s;
+      visibility: hidden;
+      opacity: 0;
+      transform: translate(50px);
+    }
+  }
+}
+
+//contact section
+
+.contact-info,
+.social-media {
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form .card .header {
+  background-color: var(--mint);
+}
+
+.icon-contact {
+  width: 40px;
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    height: 50px;
+  }
+
+  &:nth-child(3) {
+    margin-top: -15px;
+  }
+}
